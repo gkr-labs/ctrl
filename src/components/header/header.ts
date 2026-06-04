@@ -10,8 +10,8 @@ import { WebusbService } from 'services/webusb'
 import { MINUMUM_FIRMWARE_VERSION } from 'lib/version'
 
 
-const FW_RELEASES_LINK = 'https://github.com/inputlabs/alpakka_firmware/releases'
-const APP_RELEASES_LINK = 'https://github.com/inputlabs/ctrl/releases'
+const FW_RELEASES_LINK = 'https://github.com/gkr-labs/vikkuna/releases'
+const APP_RELEASES_LINK = 'https://github.com/gkr-labs/vikkuna/releases'
 const FIRMWARE_ACK = 'firmware_ack'
 const PWA_UPDATE_CHECK_FREQ = 1000 * 60 * 5  // 5 Minutes.
 
