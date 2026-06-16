@@ -14,7 +14,7 @@ import { CtrlThumbstick, CtrlGyro, CtrlGyroAxis, CtrlHome } from 'lib/ctrl'
 import { SectionIndex, sectionIsAnalog } from 'lib/ctrl'
 import { ThumbstickMode, GyroMode } from 'lib/ctrl'
 import { HID, isAxis, isMouseAxis, isScrollAxis, isGamepadAxis } from 'lib/hid'
-import { PinV0, PinV1 } from 'lib/pin'
+import { PinV0, PinV1, PinVikkunaV0 } from 'lib/pin'
 import { delay } from 'lib/delay'
 import { plotCircle, plotRamp, plotRotation } from 'lib/plot'
 
@@ -118,6 +118,7 @@ export class SectionComponent {
 
   getPins() {
     if (this.webusb.selectedDevice!.isAlpakkaV0()) return PinV0
+    else if (this.webusb.selectedDevice!.isVikkunaV0()) return PinVikkunaV0
     else return PinV1
   }
 

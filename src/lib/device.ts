@@ -160,12 +160,16 @@ export class Device {
   }
 
   isController() {
-    if (this.usbDevice.productName == 'Alpakka') return true
+    if (this.usbDevice.productName == 'Vikkuna' || this.usbDevice.productName == 'Alpakka') return true
     return false
   }
 
   isDongle() {
     return !this.isController()
+  }
+
+  isVikkunaV0() {
+    return this.getName() == 'Vikkuna' && this.usbDevice.serialNumber == 'v0'
   }
 
   isAlpakkaV0() {
@@ -413,6 +417,7 @@ export const deviceWirelessProxyHandler = {
     if (key == 'logs') return target.logsProxy
     if (key == 'isController') return ()=>true
     if (key == 'isDongle') return ()=>false
+    if (key == 'isVikkunaV0') return ()=>false
     if (key == 'isAlpakkaV0') return ()=>false
     if (key == 'isAlpakkaV1') return ()=>true
     if (key == 'isProxy') return ()=>true
